@@ -1,213 +1,202 @@
 # Federated-Learning-Infrastructure
 
-🛡️ FedFraud
+# 🛡️ FedFraud  
+### Privacy-Preserving Federated Fraud Detection Platform
 
-Privacy-Preserving Federated Fraud Detection Platform
+**FedFraud** is a full-stack, decentralized financial intelligence system designed to detect fraudulent activities across multiple banking institutions **without sharing raw customer data**.
 
-FedFraud is a full-stack, decentralized financial intelligence system designed to detect fraud across multiple banking institutions without ever sharing raw customer data.
+It combines a modern **Secure Insight Dashboard (Frontend)** with a **Federated, Privacy-Preserving AI Backend**, enabling collaborative fraud detection while maintaining strict data privacy, sovereignty, and regulatory compliance.
 
-It combines a modern analytics dashboard (frontend) with a federated, privacy-preserving AI backend, enabling secure collaboration across institutions while maintaining strict data sovereignty and regulatory compliance.
+---
 
-🧠 Core Idea
+## 🧠 Core Concept
 
-“The model travels to the data — not the other way around.”
+> **“The model travels to the data — not the data to the model.”**
 
-Banks collaboratively train a global fraud detection model using Federated Learning, while Differential Privacy ensures that no individual transaction or customer record can ever be reconstructed.
+Banks collaboratively train a global fraud detection model using **Federated Learning**, while **Differential Privacy** ensures that no individual transaction or customer record can ever be reconstructed.
 
-📁 Project Structure
-fedfraud/
+---
+
+## 📁 Project Structure
+
+FedFraud/
 │
-├── frontend/                     # Secure Insight Dashboard (UI)
-│   ├── src/
-│   │   ├── components/           # Reusable UI components (Modal, etc.)
-│   │   ├── pages/
-│   │   ├── App.tsx
-│   │   ├── main.tsx
-│   │   └── index.css
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.ts
+├── frontend/ # Secure Insight Dashboard (UI)
+│ ├── src/
+│ │ ├── components/ # Reusable UI components (Modal, Charts, etc.)
+│ │ ├── pages/
+│ │ ├── App.tsx
+│ │ ├── main.tsx
+│ │ └── index.css
+│ ├── index.html
+│ ├── package.json
+│ └── vite.config.ts
 │
-├── backend/                      # Federated AI Backend
-│   ├── server.py                 # Global federated orchestrator
-│   ├── client.py                 # Bank-side training node
-│   ├── model_utils.py            # Shared FinancialBrain model
-│   ├── cleaned_DATA.csv          # Local bank data (never shared)
-│   └── requirements.txt
+├── backend/ # Federated Learning Backend
+│ ├── server.py # Global Federated Orchestrator
+│ ├── client.py # Bank-side Training Node
+│ ├── model_utils.py # Shared FinancialBrain Model
+│ ├── cleaned_DATA.csv # Local bank data (never shared)
+│ └── requirements.txt
 │
-├── README.md                     # Combined project documentation
+├── README.md # Combined Documentation
 └── .gitignore
 
-🚀 Key Features & Novelty
-🔐 Backend (FedFraud Engine)
 
-Federated Learning (Flower)
+---
 
-Model updates are aggregated, not raw data
+## 🚀 Key Features
 
-Full data sovereignty for banks
+### 🔐 Backend (Federated AI Engine)
 
-Differential Privacy (Opacus – DP-SGD)
+- **Federated Learning (Flower)**
+  - Collaborative model training without data sharing
+  - Full data sovereignty for participating banks
 
-Mathematical noise added to gradients
+- **Differential Privacy (Opacus – DP-SGD)**
+  - Noise added to gradients to prevent inversion attacks
+  - Guarantees mathematical privacy protection
 
-Prevents inversion & membership inference attacks
+- **FedProx Optimization**
+  - Handles data and system heterogeneity
+  - Ensures stable training across unequal clients
 
-FedProx Optimization
+- **Zero-Trust Architecture**
+  - No centralized data storage
+  - Server only sees anonymized mathematical updates
 
-Handles system & data heterogeneity
+---
 
-Stable training across unequal clients
+### 🖥️ Frontend (Secure Insight Dashboard)
 
-Zero-Trust Architecture
+- Built with **React + Vite + TypeScript**
+- Styled using **Tailwind CSS & shadcn/ui**
+- Interactive fraud analytics dashboard
+- Modal-based UI for alerts and insights
+- Fully removed Lovable branding
+- Ready for real-time backend integration
 
-Server never sees data
+---
 
-Only anonymous, clipped, noised gradients are shared
+## 🏗️ System Architecture
 
-🖥️ Frontend (Secure Insight Dashboard)
+### Federated Learning Flow
 
-⚡ React + Vite + TypeScript
-
-🎨 Tailwind CSS + shadcn/ui
-
-📊 Fraud analytics dashboard
-
-🪟 Reusable modal components
-
-❌ Lovable branding fully removed
-
-🔗 Ready for real-time backend integration
-
-🏗️ System Architecture
-Federated Backend Flow
 Bank A (Client) ─┐
 Bank B (Client) ─┼──► Global Server (FedProx Aggregation)
 Bank C (Client) ─┘
-        ▲
-        │
-  No raw data ever leaves the bank
+▲
+│
+Raw data never leaves the bank
 
-Full-Stack Flow
+
+### Full Stack Flow
+
 Frontend Dashboard ──► Backend API ──► Federated Learning Engine
 
-🛠️ Technology Stack
-Frontend
 
-React + Vite
+---
 
-TypeScript
+## 🛠️ Technology Stack
 
-Tailwind CSS
+### Frontend
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
 
-shadcn/ui
+### Backend
+- Python 3.10+
+- Flower (flwr)
+- PyTorch
+- Opacus (Differential Privacy)
+- Pandas
 
-Backend
+---
 
-Python 3.10+
+## ⚙️ Setup & Installation
 
-Flower (flwr)
+### 1️⃣ Prerequisites
 
-PyTorch
+- Node.js **18+**
+- Python **3.10+**
+- All backend clients connected to the same network
 
-Opacus (Differential Privacy)
+---
 
-Pandas
+## 🖥️ Frontend Setup
 
-⚙️ Setup & Installation
-1️⃣ Prerequisites
-
-Python 3.10+
-
-Node.js 18+
-
-All backend clients connected to the same network
-
-🖥️ Frontend Setup
+```bash
 cd frontend
 npm install
 npm run dev
-
-
-Frontend runs at:
+Access the dashboard at:
 
 http://localhost:8080
-
 🧠 Backend Setup (Federated Learning)
 Install Dependencies
 cd backend
 pip install flwr torch pandas opacus
-
 Network Configuration
-
-Find Server IP
+Find the Server IPv4 Address
 
 Windows: ipconfig
 
-Mac/Linux: ifconfig
+Linux / macOS: ifconfig
 
-Update in client.py:
+Update the server IP in client.py:
 
 SERVER_IP = "192.168.x.x"
-
-
-Ensure port 8888 is open in the firewall.
+Ensure port 8888 is allowed through the firewall.
 
 🚦 Execution Guide
 Step 1: Start the Global Server
 python server.py
+Acts as the global federated coordinator
 
-
-Acts as the global coordinator
-
-Waits for minimum 3 clients
+Waits until a minimum of 3 clients connect
 
 Step 2: Start Bank Clients
-
-On each bank laptop:
+Run on each participating bank machine:
 
 python client.py
+✔ Each bank:
 
+Trains locally on its private dataset
 
-✔ Each client:
+Shares only privacy-preserving updates
 
-Uses its own local dataset
-
-Trains locally
-
-Sends only privacy-preserving updates
+Never exposes raw transaction data
 
 📊 Technical Specifications
-Component	Implementation
+Component	Details
 Framework	Flower (flwr)
 Privacy Engine	Opacus (DP-SGD)
-Model	FinancialBrain (Neural Network)
-Loss Function	MSELoss
-Optimizer	Adam + FedProx
+Model	FinancialBrain Neural Network
+Loss Function	Mean Squared Error (MSE)
+Optimizer	Adam with FedProx
 Privacy Budget	ε = 1.1, δ = 10⁻⁵
 Aggregation	FedProx
 🛡️ Security & Privacy Disclaimer
+No raw transaction data is transmitted
 
-❌ No raw transaction data is transmitted
+No centralized data storage
 
-❌ No centralized storage of sensitive data
+Only clipped, noised gradients are shared
 
-✔ Only clipped, noised gradients are shared
+Resistant to inversion and membership inference attacks
 
-✔ Resistant to inversion & membership attacks
-
-This system is designed with privacy-by-design principles and aligns with financial data compliance requirements.
+This system follows privacy-by-design principles and is suitable for financial and regulatory-sensitive environments.
 
 🔮 Future Enhancements
+Real-time fraud alerts on the dashboard
 
-Real-time fraud alerts on dashboard
+Blockchain-based audit logging
 
-Blockchain-based audit trails
+Secure authentication for participating banks
 
-Secure authentication for banks
-
-Deployment on cloud federated clusters
-
+Cloud-based federated deployment
 👩‍💻 Author
 
 Pranathi P K, Ragul P, Reena Evelin J, Rohith g
