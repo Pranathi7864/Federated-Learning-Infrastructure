@@ -13,7 +13,7 @@ It combines a modern **Secure Insight Dashboard (Frontend)** with a **Federated,
 
 > **“The model travels to the data — not the data to the model.”**
 
-Banks collaboratively train a global fraud detection model using **Federated Learning**, while **Differential Privacy** ensures that no individual transaction or customer record can ever be reconstructed.
+Financial companies collaboratively train a global fraud detection model using **Federated Learning**, while **Differential Privacy** ensures that no individual transaction or customer record can ever be reconstructed.
 
 ---
 
