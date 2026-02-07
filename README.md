@@ -42,7 +42,7 @@ Financial companies collaboratively train a global fraud detection model using *
 ### 🖥️ Frontend (Secure Insight Dashboard)
 
 - Built with **React + Vite + TypeScript**
-- Styled using **Tailwind CSS & shadcn/ui**
+- Styled using **Tailwind CSS**
 - Interactive fraud analytics dashboard
 - Modal-based UI for alerts and insights
 - Fully removed Lovable branding
@@ -62,10 +62,8 @@ Frontend Dashboard ──► Backend API ──► Federated Learning Engine
 
 ### Frontend
 - React
-- Vite
 - TypeScript
 - Tailwind CSS
-- shadcn/ui
 
 ### Backend
 - Python 3.10+
