@@ -88,6 +88,8 @@ Frontend Dashboard ──► Backend API ──► Federated Learning Engine
 
 👩‍💻 Author
 
-Pranathi P K, Ragul P, Reena Evelin J, Rohith g
+Pranathi P K, Ragul P, Reena Evelin J, Rohith G
+
 B.Tech Information Technology, Dr.N.G.P. Institute of Technology
+
 BS Data Science – IIT Madras
